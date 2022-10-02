@@ -1,8 +1,12 @@
 
 const choices = ["Rock", "Paper", "Scissors"];
 
-function getComputerChoice () {
+function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function getPlayerChoice() {
+    return playerSelection;
 }
 
 let playerScore = 0
@@ -12,7 +16,7 @@ let computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice().toLowerCase();
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = getPlayerChoice().toLowerCase();
     if (computerSelection == playerSelection) {
       console.log("Tie game!");
     } else if (
@@ -31,6 +35,10 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Please enter a valid answer.")
     }
+}
+
+function game() {
+    
 }
 
 console.log(playRound(playerSelection, computerSelection));
