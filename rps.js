@@ -6,19 +6,19 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    return playerSelection;
+    return prompt("Choose your fighter! Rock, Paper, or Scissors?");
 }
 
 let playerScore = 0
 let computerScore = 0
-let playerSelection = prompt("Choose your fighter! Rock, Paper, or Scissors?");
-let computerSelection = getComputerChoice();
+let playerSelection;
+let computerSelection;
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice().toLowerCase();
     playerSelection = getPlayerChoice().toLowerCase();
     if (computerSelection == playerSelection) {
-      console.log("Tie game!");
+      console.log("Tie!");
     } else if (
         (computerSelection == "rock" && playerSelection == "scissors") ||
         (computerSelection == "scissors" && playerSelection == "paper") ||
@@ -38,7 +38,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    
+    for (let i = 0; i < 5; i++) {
+    playRound(playerSelection, computerSelection);
+    }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
